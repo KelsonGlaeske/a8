@@ -23,12 +23,10 @@ def complete(tnode):
             ldepth = cmplt(TN.get_left(tnode))
             rdepth = cmplt(TN.get_right(tnode))
 
-            if rdepth[1] is not None:
-                if ldepth[1] is not None:
-                    if ldepth == rdepth:
-                        flag = True
-                        depth = rdepth[1]+1
-                        return flag, depth
+            if (rdepth[1] is not None) and (ldepth[1] is not None) and ldepth == rdepth:
+                flag = True
+                depth = rdepth[1]+1
+                return flag, depth
             else:
                 flag, depth = False, None
                 return flag, depth

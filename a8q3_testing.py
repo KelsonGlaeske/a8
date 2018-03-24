@@ -65,6 +65,6 @@ testcasesComplete = [
 ]
 
 for test in testcasesComplete:
-    testOut = test["Input"]
+    testOut = complt.complete(test["Input"])
     testPrint = "Expected " + str(test["Output"]) + " returned " + str(testOut) + ", " + test["Reason"]
-    assert test["Input"] == test["Output"], testPrint
+    assert testOut == test["Output"], testPrint
