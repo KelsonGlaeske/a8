@@ -25,7 +25,6 @@ def ordered(tnode):
         3. If the right subtree is not empty and all values in said subtree are greater than the root value
     """
     # Check for no tree
-    print()
     if tnode is None:
         return True
     # Check for single leaf tree
