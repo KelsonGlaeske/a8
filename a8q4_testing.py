@@ -27,13 +27,13 @@ orderedTestCases = [
     {
         "Input"     : Tn.create(1, Tn.create(2)),
         "Output"    : False,
-        "Reason"    : "The tree is incomplete and therefore disordered"
+        "Reason"    : "The tree is disordered because the left leaf is greater than the root"
     },
     #3
     {
         "Input"     : Tn.create(2, Tn.create(1), Tn.create(3)),
         "Output"    : True,
-        "Reason"    : "The tree has has a depth of two, complete, and in order"
+        "Reason"    : "The tree has has a depth of two and is ordered"
     },
     #4
     {
@@ -66,6 +66,18 @@ orderedTestCases = [
                                 ),
         "Output"    : False,
         "Reason"    : "The left leaf of the left branch is larger than the branch"
+    },
+    #7
+    {
+        "Input"     : Tn.create(4,
+                                Tn.create(2,
+                                          Tn.create(1),
+                                          Tn.create(3)),
+                                Tn.create(6,
+                                          Tn.create(5),)
+                                ),
+        "Output"    : True,
+        "Reason"    : "The tree is incomplete but still ordered"
     }
 ]
 
