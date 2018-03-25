@@ -24,11 +24,17 @@ def ordered(tnode):
         2. If the left subtree is not empty and all values in said subtree are less than the root value
         3. If the right subtree is not empty and all values in said subtree are greater than the root value
     """
+    # Check for no tree
     if tnode is None:
+        return True
+    # Check for tree end
+    elif Tn.get_left(tnode) is None and Tn.get_right(tnode) is None:
+        return True
+    # Check for incomplete tree
+    elif (Tn.get_left(tnode) is None) != (Tn.get_right(tnode) is None):
         return False
-    elif (Tn.get_left(tnode) is None) or (Tn.get_right(tnode) is None):
-        return False
-    elif Tn.get_left(tnode) > Tn.get_data(tnode) and Tn.get_right(tnode) < Tn.get_data(tnode):
+    # Check for proper tree order
+    elif Tn.get_left(tnode) > tnode and Tn.get_right(tnode) < tnode:
         ordered(Tn.get_left(tnode))
         ordered(Tn.get_right(tnode))
         return True
