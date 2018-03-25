@@ -28,6 +28,9 @@ def ordered(tnode):
     print()
     if tnode is None:
         return True
+    # Check for single leaf tree
+    elif Tf.is_leaf(tnode):
+        return True
     # Check for tree end
     elif Tn.get_left(tnode) is None and Tn.get_right(tnode) is None:
         return True
