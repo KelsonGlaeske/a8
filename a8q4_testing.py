@@ -33,7 +33,7 @@ orderedTestCases = [
     {
         "Input"     : Tn.create(2, Tn.create(1), Tn.create(3)),
         "Output"    : True,
-        "Reason"    : "The tree has has a depth of two and is ordered"
+        "Reason"    : "The tree has a depth of two and is ordered"
     },
     #4
     {
