@@ -30,23 +30,21 @@ def ordered(tnode):
             # Check for tree end
             if Tn.get_left(tnode) is None and Tn.get_right(tnode) is None:
                 return True, Tn.get_data(tnode)
-            # Check for uneven tree
-            elif (Tn.get_left(tnode) is None) != (Tn.get_right(tnode) is None):
                 # Check for proper order
-                if ordrd(Tn.get_left(tnode))[1] < Tn.get_data(tnode) and ordrd(Tn.get_right(tnode))[1] > Tn.get_data(tnode):
-                    return True, Tn.get_data(tnode)
             # Check for proper order without left
             elif Tn.get_left(tnode) is None:
                 if ordrd(Tn.get_right(tnode))[1] > Tn.get_data(tnode):
                     return True, Tn.get_data(tnode)
                 else:
                     return False, Tn.get_data(tnode)
-           # Check for proper order without right
+            # Check for proper order without right
             elif Tn.get_right(tnode) is None:
                 if ordrd(Tn.get_left(tnode))[1] < Tn.get_data(tnode):
                     return True, Tn.get_data(tnode)
                 else:
                     return False, Tn.get_data(tnode)
+            if ordrd(Tn.get_left(tnode))[1] < Tn.get_data(tnode) and ordrd(Tn.get_right(tnode))[1] > Tn.get_data(tnode):
+                return True, Tn.get_data(tnode)
             else:
                 return False, Tn.get_data(tnode)
 

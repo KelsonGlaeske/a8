@@ -55,18 +55,18 @@ orderedTestCases = [
         "Reason"    : "The tree is in order with a depth of 3"
     },
     #6
-    # {
-    #     "Input"     : Tn.create(4,
-    #                             Tn.create(2,
-    #                                       Tn.create(1),
-    #                                       Tn.create(3)),
-    #                             Tn.create(6,
-    #                                       Tn.create(7),
-    #                                       Tn.create(5))
-    #                             ),
-    #     "Output"    : False,
-    #     "Reason"    : "The left leaf of the left branch is larger than the branch"
-    # },
+    {
+        "Input"     : Tn.create(4,
+                                Tn.create(2,
+                                          Tn.create(1),
+                                          Tn.create(3)),
+                                Tn.create(6,
+                                          Tn.create(7),
+                                          Tn.create(5))
+                                ),
+        "Output"    : False,
+        "Reason"    : "The left leaf of the left branch is larger than the branch"
+    },
     #7
     {
         "Input"     : Tn.create(4,
