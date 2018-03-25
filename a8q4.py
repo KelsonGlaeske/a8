@@ -17,24 +17,22 @@ def ordered(tnode):
     Pre-condition: :param tnode: tree-node defined by treenode ADT
     Post-condition: none
     :return: True if tnode is ordered, False otherwise
-
     A binary search tree is ordered if and only if all the following conditions are true:
         0. The left subtree is ordered
         1. The right subtree is ordered
         2. If the left subtree is not empty and all values in said subtree are less than the root value
         3. If the right subtree is not empty and all values in said subtree are greater than the root value
     """
-    # Check for no tree
-    if tnode is None:
-        return True
-    # Check for single leaf tree
-    elif Tf.is_leaf(tnode):
-        return True
-    # Check for tree end
-    elif Tn.get_left(tnode) is None and Tn.get_right(tnode) is None:
-        return True
-    # Check for proper tree order
-    elif ordered(Tn.get_left(tnode)) < Tn.get_data(tnode) and ordered(Tn.get_right(tnode)) > Tn.get_data(tnode):
-        return True
-    else:
-        return False
+    def ordrd(tnode):
+        # Check for no tree
+        if tnode is None:
+            return True, None
+        # Check for tree end
+        elif Tn.get_left(tnode) is None and Tn.get_right(tnode) is None:
+            return True, Tn.get_data(tnode)
+        # Check for proper tree order
+        elif ordrd(Tn.get_left(tnode))[1] < Tn.get_data(tnode) and ordrd(Tn.get_right(tnode))[1] > Tn.get_data(tnode):
+            return True, Tn.get_data(tnode)
+        else:
+            return False, Tn.get_data(tnode)
+    return ordrd(tnode)[0]
